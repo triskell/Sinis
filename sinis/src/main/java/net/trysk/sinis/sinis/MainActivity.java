@@ -32,15 +32,13 @@ public class MainActivity extends Activity {
     }
 
     private void createCards() {
-        ArrayList<Card> cards = new ArrayList<Card>();
+        mCards = new ArrayList<Card>();
         Card card;
 
         card = new Card(this);
         card.setText("Test Card");
         card.setFootnote("Swipe to see next cards, if any.");
         mCards.add(card);
-
-        mCards = cards;
     }
 
 
