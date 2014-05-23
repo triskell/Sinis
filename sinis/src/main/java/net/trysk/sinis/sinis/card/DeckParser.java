@@ -13,17 +13,19 @@ public class DeckParser {
 
     private Gson mGson = new Gson();
 
-    public Deck getMeck() {
+    private ArrayList<Deck> meck;
+
+    public ArrayList getMeck() {
         return meck;
     }
 
-    private Deck meck;
+
 
     public DeckParser(String s) {
 
         Type listType = new TypeToken<ArrayList<Deck>>() {
         }.getType();
 
-        this.mGson.fromJson(s,Deck.class);
+        this.meck = this.mGson.fromJson(s,listType);
     }
 }

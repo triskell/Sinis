@@ -11,6 +11,7 @@ import com.google.android.glass.widget.CardScrollView;
 
 import net.trysk.sinis.sinis.adapter.CustomCardScrollAdapter;
 import net.trysk.sinis.sinis.card.Deck;
+import net.trysk.sinis.sinis.card.DeckParser;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,10 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        DeckParser unicorn = new DeckParser(getResources().getString(R.string.This_is_where_the_magic_happen));
+
+        this.mDecks = unicorn.getMeck();
         super.onCreate(savedInstanceState);
 
         ArrayList<Card> cards = new ArrayList<Card>();
