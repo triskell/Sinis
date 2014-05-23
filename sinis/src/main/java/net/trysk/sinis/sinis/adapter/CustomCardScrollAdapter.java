@@ -15,8 +15,8 @@ public class CustomCardScrollAdapter extends CardScrollAdapter {
 
     private ArrayList<Card> mCards = null;
 
-    public CustomCardScrollAdapter(ArrayList<Card> cards){
-        this.mCards = cards;
+    public CustomCardScrollAdapter(ArrayList<Card> card){
+        this.mCards = card;
     }
 
     @Override

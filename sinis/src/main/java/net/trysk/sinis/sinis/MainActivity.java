@@ -1,6 +1,7 @@
 package net.trysk.sinis.sinis;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,36 +10,46 @@ import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollView;
 
 import net.trysk.sinis.sinis.adapter.CustomCardScrollAdapter;
+import net.trysk.sinis.sinis.card.Deck;
 
 import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
 
-    private ArrayList<Card> mCards;
+    private ArrayList<Deck> mDecks;
     private CardScrollView mCardScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        createCards();
+        ArrayList<Card> cards = new ArrayList<Card>();
+        for (Deck mDeck : mDecks) {
+            cards.add(mDeck.getCard());
+        }
+
+        createDecks();
 
         mCardScrollView = new CardScrollView(this);
-        CustomCardScrollAdapter adapter = new CustomCardScrollAdapter(mCards);
+        CustomCardScrollAdapter adapter = new CustomCardScrollAdapter(cards);
         mCardScrollView.setAdapter(adapter);
         mCardScrollView.activate();
         setContentView(mCardScrollView);
+
+        Intent intentList = new Intent(this, ListActivity.class);
+        intentList.putExtra("Deck", mDecks);
+        startActivity(intentList);
     }
 
-    private void createCards() {
-        mCards = new ArrayList<Card>();
-        Card card;
+    private void createDecks() {
+        mDecks = new ArrayList<Deck>();
+        Deck deck;
 
-        card = new Card(this);
-        card.setText("Test Card");
-        card.setFootnote("Swipe to see next cards, if any.");
-        mCards.add(card);
+        createDecks();
+
+        deck = new Deck(this.getBaseContext(), "Test Deck, main text","footnote here","", (short) 0,true);
+        mDecks.add(deck);
     }
 
 

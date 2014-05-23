@@ -1,17 +1,23 @@
 package net.trysk.sinis.sinis.card;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.google.android.glass.app.Card;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import net.trysk.sinis.sinis.R;
 
 import java.io.Serializable;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class Deck{
 
     private ArrayList<Deck> mDecks = null;
 
+    private Gson mGson = new Gson();
     Context mContext;
     boolean mIsFullScreen;
     short mCardType; //0:normal, 1:photo, 2:video
