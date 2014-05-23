@@ -42,7 +42,7 @@ public class ListActivity extends Activity {
         }.getType();
 
         mDecks=gson.fromJson(extras.getString("Deck"), listType);
-        
+
 
         mCards = new ArrayList<Card>();
         for (Deck mDeck : mDecks) {
@@ -65,7 +65,10 @@ public class ListActivity extends Activity {
                 }
                 else{
                     Intent intent = new Intent("net.trysk.sinis.sinis.ListActivity");
-                    intent.putExtra("Deck", mDecks.get(i).getmDecks());
+                    Gson gson=new Gson();
+                    String decks=gson.toJson(mDecks.get(i).getmDecks());
+
+                    intent.putExtra("Deck", decks);
                 }
             }
         });
