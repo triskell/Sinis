@@ -1,18 +1,14 @@
 package net.trysk.sinis.sinis.card;
 
 import android.content.Context;
-import android.widget.ImageView;
 
 import com.google.android.glass.app.Card;
 
-import net.trysk.sinis.sinis.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * Created by trysk on 23/05/14.
- */
-public class Deck {
+public class Deck implements Serializable{
 
     private ArrayList<Deck> mDecks = null;
 
