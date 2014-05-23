@@ -8,7 +8,7 @@ import com.google.android.glass.app.Card;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Deck implements Serializable{
+public class Deck{
 
     private ArrayList<Deck> mDecks = null;
 
@@ -58,5 +58,9 @@ public class Deck implements Serializable{
 
     public ArrayList<Deck> getmDecks() {
         return mDecks;
+    }
+
+    public int getType(){
+        return mCardType;
     }
 }
