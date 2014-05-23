@@ -42,7 +42,7 @@ public class Deck {
                 break;
             default:
                 if(this.mText!=null) card.setText(mText);
-                if(this.mFootnote!=null) card.setFootnote("Aren't they precious?");
+                if(this.mFootnote!=null) card.setFootnote(mFootnote);
 
                 if(this.mImageR!=null){
                     if(this.mIsFullScreen) card.setImageLayout(Card.ImageLayout.FULL);
