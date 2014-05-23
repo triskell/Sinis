@@ -9,14 +9,14 @@ import com.google.android.glass.widget.CardScrollAdapter;
 import java.util.ArrayList;
 
 /**
- * Created by trysk on 23/05/14.
+ * Created by Thomas Abot on 23/05/14.
  */
 public class CustomCardScrollAdapter extends CardScrollAdapter {
 
     private ArrayList<Card> mCards = null;
 
-    public CustomCardScrollAdapter(cards){
-
+    public CustomCardScrollAdapter(ArrayList<Card> cards){
+        this.mCards = cards;
     }
 
     @Override
@@ -27,16 +27,19 @@ public class CustomCardScrollAdapter extends CardScrollAdapter {
 
     @Override
     public Object getItem(int i) {
-        return null;
+        if(mCards == null) return null;
+        return mCards.get(i);
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+        if(mCards == null) return null;
+        return mCards.get(i).getView();
     }
 
     @Override
     public int getPosition(Object o) {
-        return 0;
+        if(mCards == null) return 0;
+        return mCards.indexOf(o);
     }
 }

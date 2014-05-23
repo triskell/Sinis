@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.glass.app.Card;
-import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
 
 import net.trysk.sinis.sinis.adapter.CustomCardScrollAdapter;
@@ -30,12 +29,6 @@ public class MainActivity extends Activity {
         mCardScrollView.setAdapter(adapter);
         mCardScrollView.activate();
         setContentView(mCardScrollView);
-        mCardScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                tappedCard();
-            }
-        });
     }
 
     private void createCards() {
@@ -46,6 +39,8 @@ public class MainActivity extends Activity {
         card.setText("Test Card");
         card.setFootnote("Swipe to see next cards, if any.");
         mCards.add(card);
+
+        mCards = cards;
     }
 
 
