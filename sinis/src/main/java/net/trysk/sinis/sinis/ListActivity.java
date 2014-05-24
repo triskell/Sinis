@@ -39,7 +39,6 @@ public class ListActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         mDecks= DeckSingleton.getInstance(this).getCurrentDeck();
 
-
         mCards = new ArrayList<Card>();
         for (Deck mDeck : mDecks) {
             mCards.add(mDeck.getCard(this));
@@ -49,13 +48,25 @@ public class ListActivity extends Activity {
         mCardScrollView.setAdapter(adapter);
         mCardScrollView.activate();
         setContentView(mCardScrollView);
+
+        final Activity a=this;
+
         mCardScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (mDecks.get(i).getType() == 1) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent, 0);
+
                 } else if (mDecks.get(i).getType() == 2) {
+                    Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                    startActivityForResult(intent, 0);
+                }
+                else if(mDecks.get(i).getType() == 3){
+                    //System.exit(0);
+                    DeckSingleton.exit=true;
+                    a.finish();
+                    a.getApplication().onTerminate();
                 }
                 else {
                     if(DeckSingleton.getInstance(view.getContext()).getCurrentDeck().get(i).getmDecks().size()>0) {
@@ -79,6 +90,15 @@ public class ListActivity extends Activity {
     }
 
     @Override
+    public void onResume(){
+
+        super.onResume();
+        if(DeckSingleton.exit==true){
+            this.finish();
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.list, menu);
@@ -96,7 +116,7 @@ public class ListActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-    @Override
+    /*@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             String picturePath = data.getStringExtra(
@@ -149,5 +169,5 @@ public class ListActivity extends Activity {
             };
             observer.startWatching();
         }
-    }
+    }*/
 }

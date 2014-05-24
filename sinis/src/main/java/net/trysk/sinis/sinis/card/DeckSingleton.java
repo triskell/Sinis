@@ -13,6 +13,7 @@ public class DeckSingleton {
     public static ArrayList<Integer> indexes;
     private ArrayList<Deck> globalDeck;
     private static DeckSingleton deckUnicorn=null;
+    public static boolean exit=false;
 
     private DeckSingleton(Context c){
         indexes=new ArrayList<Integer>();
@@ -47,5 +48,10 @@ public class DeckSingleton {
             i++;
         }
         return currentDeck;
+    }
+
+    public static void Init(){
+        indexes.clear();
+        exit=false;
     }
 }

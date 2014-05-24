@@ -7,102 +7,111 @@
     <string name="title_activity_list">ListActivity</string>
     <string name="This_is_where_the_magic_happen">[
     {
-        \"mIsFullScreen\" : true,
+        \"mIsFullScreen\" : false,
         \"mCardType\" : 0,
         \"mText\" : \"Véhicule\",
         \"mFootnote\" : \"Taper pour choisir\",
-        \"mImageR\" : \"\",
+        \"mImageR\" : \"@drawable/voiture\",
         \"mDesks\" : [
         	{
-        		\"mIsFullScreen\" : true,
+        		\"mIsFullScreen\" : false,
         		\"mCardType\" : 0,
         		\"mText\" : \"Hors agglomération \",
         		\"mFootnote\" : \"Taper pour choisir\",
-        		\"mImageR\" : \"\",
+        		\"mImageR\" : \"@drawable/horsagglo\",
         		\"mDesks\" : [
         			{
-        				\"mIsFullScreen\" : true,
+        				\"mIsFullScreen\" : false,
         				\"mCardType\" : 0,
-        				\"mText\" : \"Mettez votre gilet de sécurité et votre triangle\",
+        				\"mText\" : \"Portez le gilet jaune,\n et installez le triangle\",
         				\"mFootnote\" : \"Taper pour continuer\",
-        				\"mImageR\" : \"\",
+        				\"mImageR\" : \"@drawable/gilletriangl\",
         				\"mDesks\" : [
-        					{
-								\"mIsFullScreen\" : true,
-        						\"mCardType\" : 0,
-        						\"mText\" : \"Faire un constat\",
-        						\"mFootnote\" : \"Taper pour continuer\",
-        						\"mImageR\" : \"\",
-        						\"mDesks\" : [
-        							{
-										\"mIsFullScreen\" : true,
-        								\"mCardType\" : 1,
-        								\"mText\" : \"Ajouter une photo\",
-        								\"mFootnote\" : \"Taper pour continuer\",
-        								\"mImageR\" : \"\",
-        								\"mDesks\" : []
-        							},
-        							{
-										\"mIsFullScreen\" : true,
-        								\"mCardType\" : 2,
-        								\"mText\" : \"Ajouter une vidéo\",
-        								\"mFootnote\" : \"Taper pour continuer\",
-        								\"mImageR\" : \"\",
-        								\"mDesks\" : []
-        							},
-		        					{
-										\"mIsFullScreen\" : true,
-		        						\"mCardType\" : 0,
-		        						\"mText\" : \"Etape suivante\",
-		        						\"mFootnote\" : \"Taper pour continuer\",
-		        						\"mImageR\" : \"\",
-		        						\"mDesks\" : [
-				        					{
-												\"mIsFullScreen\" : true,
-				        						\"mCardType\" : 0,
-				        						\"mText\" : \"Le dépannage est en chemin !\",
-				        						\"mFootnote\" : \"Taper pour continuer\",
-				        						\"mImageR\" : \"\",
-				        						\"mDesks\" : []
-				        					}
-		        						]
-		        					}
-        						]
-        					},
-        					{
-								\"mIsFullScreen\" : true,
-        						\"mCardType\" : 0,
-        						\"mText\" : \"Ne pas faire de constat\",
-        						\"mFootnote\" : \"Taper pour continuer\",
-        						\"mImageR\" : \"\",
-        						\"mDesks\" : []
-        					}
+                            {
+                                \"mIsFullScreen\" : false,
+                                \"mCardType\" : 0,
+                                \"mText\" : \"Ne vous inquietez pas, mettez-vous à l\'abris\",
+                                \"mFootnote\" : \"Taper pour continuer\",
+                                \"mImageR\" : \"@drawable/abris\",
+                                \"mDesks\" : [
+                                            {
+                                                \"mIsFullScreen\" : false,
+                                                \"mCardType\" : 0,
+                                                \"mText\" : \"Faire un constat\",
+                                                \"mFootnote\" : \"Taper pour continuer\",
+                                                \"mImageR\" : \"@drawable/constat\",
+                                                \"mDesks\" : [
+                                                    {
+                                                        \"mIsFullScreen\" : false,
+                                                        \"mCardType\" : 1,
+                                                        \"mText\" : \"Ajouter une photo\",
+                                                        \"mFootnote\" : \"Glisser pour passer\",
+                                                        \"mImageR\" : \"@drawable/photo\",
+                                                        \"mDesks\" : []
+                                                    },
+                                                    {
+                                                        \"mIsFullScreen\" : false,
+                                                        \"mCardType\" : 2,
+                                                        \"mText\" : \"Ajouter une vidéo\",
+                                                        \"mFootnote\" : \"Glisser pour passer\",
+                                                        \"mImageR\" : \"@drawable/camera\",
+                                                        \"mDesks\" : []
+                                                    },
+                                                    {
+                                                        \"mIsFullScreen\" : false,
+                                                        \"mCardType\" : 0,
+                                                        \"mText\" : \"Etape suivante\",
+                                                        \"mFootnote\" : \"Taper pour continuer\",
+                                                        \"mImageR\" : \"@drawable/next\",
+                                                        \"mDesks\" : [
+                                                            {
+                                                                \"mIsFullScreen\" : false,
+                                                                \"mCardType\" : 3,
+                                                                \"mText\" : \"Le dépannage est en chemin !\",
+                                                                \"mFootnote\" : \"Taper pour quitter\",
+                                                                \"mImageR\" : \"@drawable/depanneuse\",
+                                                                \"mDesks\" : []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                \"mIsFullScreen\" : false,
+                                                \"mCardType\" : 0,
+                                                \"mText\" : \"Ne pas faire de constat\",
+                                                \"mFootnote\" : \"Taper pour continuer\",
+                                                \"mImageR\" : \"@drawable/constatnon\",
+                                                \"mDesks\" : []
+                                            }
+                                        ]
+                            }
         				]
         			}]
         	},
         	{
-        		\"mIsFullScreen\" : true,
+        		\"mIsFullScreen\" : false,
         		\"mCardType\" : 0,
         		\"mText\" : \"En agglomération\",
         		\"mFootnote\" : \"Taper pour choisir\",
-        		\"mImageR\" : \"\",
+        		\"mImageR\" : \"@drawable/agglo\",
         		\"mDesks\" : []
         	}
         ]
     },    {
-        \"mIsFullScreen\" : true,
+        \"mIsFullScreen\" : false,
         \"mCardType\" : 0 ,
         \"mText\" : \"Habitat\",
         \"mFootnote\" : \"Taper pour choisir\",
-        \"mImageR\" : \"\",
+        \"mImageR\" : \"@drawable/maison\",
         \"mDesks\" : []
     },
     {
-        \"mIsFullScreen\" : true,
+        \"mIsFullScreen\" : false,
         \"mCardType\" : 0 ,
         \"mText\" : \"Personne\",
         \"mFootnote\" : \"Taper pour choisir\",
-        \"mImageR\" : \"\",
+        \"mImageR\" : \"@drawable/personne\",
         \"mDesks\" : []
     }
 
