@@ -92,7 +92,7 @@
     },    {
         \"mIsFullScreen\" : true,
         \"mCardType\" : 0 ,
-        \"mText\" : \"Domicile\",
+        \"mText\" : \"Habitat\",
         \"mFootnote\" : \"Taper pour choisir\",
         \"mImageR\" : \"\",
         \"mDesks\" : []
