@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollAdapter;
 
+import net.trysk.sinis.sinis.card.LinkedCard;
+
 import java.util.ArrayList;
 
 /**
@@ -13,9 +15,9 @@ import java.util.ArrayList;
  */
 public class CustomCardScrollAdapter extends CardScrollAdapter {
 
-    private ArrayList<Card> mCards = null;
+    private ArrayList<LinkedCard> mCards = null;
 
-    public CustomCardScrollAdapter(ArrayList<Card> card){
+    public CustomCardScrollAdapter(ArrayList<LinkedCard> card){
         this.mCards = card;
     }
 

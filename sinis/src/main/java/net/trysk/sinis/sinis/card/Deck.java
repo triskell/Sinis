@@ -6,17 +6,18 @@ import java.util.ArrayList;
 
 public class Deck{
 
-    private ArrayList<Card> mCards = null;
+    private ArrayList<LinkedCard> mCards = null;
 
     public Deck(){
-        mCards = new ArrayList<Card>();
+        mCards = new ArrayList<LinkedCard>();
     }
 
-    public void addCard(Card card){
+    public void addCard(LinkedCard card){
         mCards.add(card);
     }
 
-    public ArrayList<Card> getCards(){
+    public ArrayList<LinkedCard> getCards(){
         return mCards;
     }
+
 }
