@@ -7,103 +7,103 @@
     <string name="title_activity_list">ListActivity</string>
     <string name="This_is_where_the_magic_happen">[
     {
-        "mIsFullScreen" : true,
-        "mCardType" : 0,
-        "mText" : "Véhicule",
-        "mFootnote" : "Taper pour choisir",
-        "mImageR" : "",
-        "mDesks" : [
+        \"mIsFullScreen\" : true,
+        \"mCardType\" : 0,
+        \"mText\" : \"Véhicule\",
+        \"mFootnote\" : \"Taper pour choisir\",
+        \"mImageR\" : \"\",
+        \"mDesks\" : [
         	{
-        		"mIsFullScreen" : true,
-        		"mCardType" : 0,
-        		"mText" : "Hors agglomération ",
-        		"mFootnote" : "Taper pour choisir",
-        		"mImageR" : "",
-        		"mDesks" : [
+        		\"mIsFullScreen\" : true,
+        		\"mCardType\" : 0,
+        		\"mText\" : \"Hors agglomération \",
+        		\"mFootnote\" : \"Taper pour choisir\",
+        		\"mImageR\" : \"\",
+        		\"mDesks\" : [
         			{
-        				"mIsFullScreen" : true,
-        				"mCardType" : 0,
-        				"mText" : "Mettez votre gilet de sécurité et votre triangle",
-        				"mFootnote" : "Taper pour continuer",
-        				"mImageR" : "",
-        				"mDesks" : [
+        				\"mIsFullScreen\" : true,
+        				\"mCardType\" : 0,
+        				\"mText\" : \"Mettez votre gilet de sécurité et votre triangle\",
+        				\"mFootnote\" : \"Taper pour continuer\",
+        				\"mImageR\" : \"\",
+        				\"mDesks\" : [
         					{
-								"mIsFullScreen" : true,
-        						"mCardType" : 0,
-        						"mText" : "Faire un constat",
-        						"mFootnote" : "Taper pour continuer",
-        						"mImageR" : "",
-        						"mDesks" : [
+								\"mIsFullScreen\" : true,
+        						\"mCardType\" : 0,
+        						\"mText\" : \"Faire un constat\",
+        						\"mFootnote\" : \"Taper pour continuer\",
+        						\"mImageR\" : \"\",
+        						\"mDesks\" : [
         							{
-										"mIsFullScreen" : true,
-        								"mCardType" : 1,
-        								"mText" : "Ajouter une photo",
-        								"mFootnote" : "Taper pour continuer",
-        								"mImageR" : "",
-        								"mDesks" : []
+										\"mIsFullScreen\" : true,
+        								\"mCardType\" : 1,
+        								\"mText\" : \"Ajouter une photo\",
+        								\"mFootnote\" : \"Taper pour continuer\",
+        								\"mImageR\" : \"\",
+        								\"mDesks\" : []
         							},
         							{
-										"mIsFullScreen" : true,
-        								"mCardType" : 2,
-        								"mText" : "Ajouter une vidéo",
-        								"mFootnote" : "Taper pour continuer",
-        								"mImageR" : "",
-        								"mDesks" : []
+										\"mIsFullScreen\" : true,
+        								\"mCardType\" : 2,
+        								\"mText\" : \"Ajouter une vidéo\",
+        								\"mFootnote\" : \"Taper pour continuer\",
+        								\"mImageR\" : \"\",
+        								\"mDesks\" : []
         							},
 		        					{
-										"mIsFullScreen" : true,
-		        						"mCardType" : 0,
-		        						"mText" : "Etape suivante",
-		        						"mFootnote" : "Taper pour continuer",
-		        						"mImageR" : "",
-		        						"mDesks" : [
+										\"mIsFullScreen\" : true,
+		        						\"mCardType\" : 0,
+		        						\"mText\" : \"Etape suivante\",
+		        						\"mFootnote\" : \"Taper pour continuer\",
+		        						\"mImageR\" : \"\",
+		        						\"mDesks\" : [
 				        					{
-												"mIsFullScreen" : true,
-				        						"mCardType" : 0,
-				        						"mText" : "Le dépannage est en chemin !",
-				        						"mFootnote" : "Taper pour continuer",
-				        						"mImageR" : "",
-				        						"mDesks" : []
+												\"mIsFullScreen\" : true,
+				        						\"mCardType\" : 0,
+				        						\"mText\" : \"Le dépannage est en chemin !\",
+				        						\"mFootnote\" : \"Taper pour continuer\",
+				        						\"mImageR\" : \"\",
+				        						\"mDesks\" : []
 				        					}
 		        						]
 		        					}
         						]
         					},
         					{
-								"mIsFullScreen" : true,
-        						"mCardType" : 0,
-        						"mText" : "Ne pas faire de constat",
-        						"mFootnote" : "Taper pour continuer",
-        						"mImageR" : "",
-        						"mDesks" : []
+								\"mIsFullScreen\" : true,
+        						\"mCardType\" : 0,
+        						\"mText\" : \"Ne pas faire de constat\",
+        						\"mFootnote\" : \"Taper pour continuer\",
+        						\"mImageR\" : \"\",
+        						\"mDesks\" : []
         					}
         				]
         			}]
         	},
         	{
-        		"mIsFullScreen" : true,
-        		"mCardType" : 0,
-        		"mText" : "En agglomération",
-        		"mFootnote" : "Taper pour choisir",
-        		"mImageR" : "",
-        		"mDesks" : []
+        		\"mIsFullScreen\" : true,
+        		\"mCardType\" : 0,
+        		\"mText\" : \"En agglomération\",
+        		\"mFootnote\" : \"Taper pour choisir\",
+        		\"mImageR\" : \"\",
+        		\"mDesks\" : []
         	}
         ]
     },    {
-        "mIsFullScreen" : true,
-        "mCardType" : 0 ,
-        "mText" : "Domicile",
-        "mFootnote" : "Taper pour choisir",
-        "mImageR" : "",
-        "mDesks" : []
+        \"mIsFullScreen\" : true,
+        \"mCardType\" : 0 ,
+        \"mText\" : \"Domicile\",
+        \"mFootnote\" : \"Taper pour choisir\",
+        \"mImageR\" : \"\",
+        \"mDesks\" : []
     },
     {
-        "mIsFullScreen" : true,
-        "mCardType" : 0 ,
-        "mText" : "Personne",
-        "mFootnote" : "Taper pour choisir",
-        "mImageR" : "",
-        "mDesks" : []
+        \"mIsFullScreen\" : true,
+        \"mCardType\" : 0 ,
+        \"mText\" : \"Personne\",
+        \"mFootnote\" : \"Taper pour choisir\",
+        \"mImageR\" : \"\",
+        \"mDesks\" : []
     }
 
 ]</string>
