@@ -73,6 +73,7 @@ public class ListActivity extends Activity {
     }
     @Override
     public void onBackPressed(){
+
         super.onBackPressed();
         DeckSingleton.getInstance(this).removeIndex();
     }
