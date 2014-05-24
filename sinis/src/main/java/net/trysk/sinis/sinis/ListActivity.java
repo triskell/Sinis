@@ -18,6 +18,7 @@ import com.google.gson.reflect.TypeToken;
 
 import net.trysk.sinis.sinis.adapter.CustomCardScrollAdapter;
 import net.trysk.sinis.sinis.card.Deck;
+import net.trysk.sinis.sinis.card.DeckSingleton;
 
 import java.io.File;
 import java.lang.reflect.Type;
@@ -35,18 +36,12 @@ public class ListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
-
-        Gson gson=new Gson();
-
-        Type listType = new TypeToken<ArrayList<Deck>>() {
-        }.getType();
-
-        mDecks=gson.fromJson(extras.getString("Deck"), listType);
+        mDecks= DeckSingleton.getInstance(this).getCurrentDeck();
 
 
         mCards = new ArrayList<Card>();
         for (Deck mDeck : mDecks) {
-            mCards.add(mDeck.getCard());
+            mCards.add(mDeck.getCard(this));
         }
         mCardScrollView = new CardScrollView(this);
         CustomCardScrollAdapter adapter = new CustomCardScrollAdapter(mCards);
@@ -56,24 +51,23 @@ public class ListActivity extends Activity {
         mCardScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(mDecks.get(i).getType()==1){
+                if (mDecks.get(i).getType() == 1) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent, 0);
+                } else if (mDecks.get(i).getType() == 2) {
                 }
-                else if(mDecks.get(i).getType()==2){
 
-                }
-                else{
-                    Intent intent = new Intent("net.trysk.sinis.sinis.ListActivity");
-                    Gson gson=new Gson();
-                    String decks=gson.toJson(mDecks.get(i).getmDecks());
+                    DeckSingleton.getInstance(view.getContext()).addIndex(i);
+                    startActivity(new Intent(view.getContext(), ListActivity.class));
 
-                    intent.putExtra("Deck", decks);
-                }
             }
         });
     }
-
+    @Override
+    protected void onStop(){
+        super.onStop();
+        DeckSingleton.getInstance(this).removeIndex();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -100,7 +94,6 @@ public class ListActivity extends Activity {
                     CameraManager.EXTRA_PICTURE_FILE_PATH);
             processPictureWhenReady(picturePath);
         }
-
         super.onActivityResult(requestCode, resultCode, data);
     }
 

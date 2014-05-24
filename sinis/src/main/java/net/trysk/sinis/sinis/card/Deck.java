@@ -18,22 +18,21 @@ public class Deck{
     private ArrayList<Deck> mDecks = null;
 
     private Gson mGson = new Gson();
-    Context mContext;
     boolean mIsFullScreen;
     short mCardType; //0:normal, 1:photo, 2:video
     String mText, mFootnote, mImageR;
 
-    public Deck(Context context, String text, String footnote, String imageR, short cardType, boolean isFullScreen) {
-        this.mContext = context;
+    public Deck(String text, String footnote, String imageR, short cardType, boolean isFullScreen, ArrayList<Deck> d) {
         this.mText = text;
         this.mFootnote = footnote;
         this.mImageR = imageR;
         this.mCardType = cardType;
         this.mIsFullScreen = isFullScreen;
+        this.mDecks=d;
     }
 
-    public Card getCard(){
-        Card card = new Card(this.mContext);
+    public Card getCard(Context mContext){
+        Card card = new Card(mContext);
 
         switch (this.mCardType){
             case 1:
@@ -43,10 +42,11 @@ public class Deck{
                 //TODO video
                 break;
             default:
-                if(this.mText!=null) card.setText(mText);
-                if(this.mFootnote!=null) card.setFootnote(mFootnote);
+                if(this.mText.length()>0) card.setText(mText);
+                if(this.mFootnote.length()>0
+                        ) card.setFootnote(mFootnote);
 
-                if(this.mImageR!=null){
+                if(this.mImageR.length()>0){
                     if(this.mIsFullScreen) card.setImageLayout(Card.ImageLayout.FULL);
                     else card.setImageLayout(Card.ImageLayout.LEFT);
 
@@ -56,8 +56,8 @@ public class Deck{
 
 
         }
-        card.setText("Test Card");
-        card.setFootnote("Swipe to see next cards, if any.");
+        card.setText(mText);
+        card.setFootnote(mFootnote);
 
         return card;
     }

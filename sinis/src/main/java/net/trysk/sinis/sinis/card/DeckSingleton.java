@@ -1,5 +1,9 @@
 package net.trysk.sinis.sinis.card;
 
+import android.content.Context;
+
+import net.trysk.sinis.sinis.R;
+
 import java.util.ArrayList;
 
 /**
@@ -7,19 +11,22 @@ import java.util.ArrayList;
  */
 public class DeckSingleton {
     private static ArrayList<Integer> indexes;
-    private Deck globalDeck;
+    private ArrayList<Deck> globalDeck;
     private static DeckSingleton deckUnicorn=null;
 
-    private DeckSingleton(Deck d){
-        this.globalDeck=d;
+    private DeckSingleton(Context c){
+        indexes=new ArrayList<Integer>();
+        DeckParser unicorn = new DeckParser(c.getResources().getString(R.string.This_is_where_the_magic_happen));
+
+        this.globalDeck = unicorn.getMeck();
     }
 
-    public DeckSingleton getInstance(Deck d){
+    public static DeckSingleton getInstance(Context c){
         if(deckUnicorn==null){
-            deckUnicorn=new DeckSingleton(d);
-            indexes=new ArrayList<Integer>();
+            deckUnicorn=new DeckSingleton(c);
+
         }
-        return this;
+        return deckUnicorn;
     }
 
     public void addIndex(int i){
@@ -32,11 +39,11 @@ public class DeckSingleton {
         }
     }
 
-    public Deck getCurrentDeck(){
-        Deck currentDeck=globalDeck;
+    public ArrayList<Deck> getCurrentDeck(){
+        ArrayList<Deck> currentDeck=globalDeck;
         int i=0;
         while(i<indexes.size()){
-            currentDeck=currentDeck.getmDecks().get(indexes.get(i));
+            currentDeck=currentDeck.get(indexes.get(i)).getmDecks();
             i++;
         }
         return currentDeck;

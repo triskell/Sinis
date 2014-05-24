@@ -3,15 +3,20 @@ package net.trysk.sinis.sinis;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollView;
+import com.google.gson.Gson;
 
 import net.trysk.sinis.sinis.adapter.CustomCardScrollAdapter;
 import net.trysk.sinis.sinis.card.Deck;
 import net.trysk.sinis.sinis.card.DeckParser;
+import net.trysk.sinis.sinis.card.DeckSingleton;
 
 import java.util.ArrayList;
 
@@ -24,18 +29,17 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        DeckParser unicorn = new DeckParser(getResources().getString(R.string.This_is_where_the_magic_happen));
-
-        this.mDecks = unicorn.getMeck();
-        System.out.println("YOLO "+mDecks.toString());
         super.onCreate(savedInstanceState);
 
+
+        mDecks=DeckSingleton.getInstance(this).getCurrentDeck();
         ArrayList<Card> cards = new ArrayList<Card>();
-        for (Deck mDeck : mDecks) {
-            cards.add(mDeck.getCard());
+        for (Deck mDeck : this.mDecks) {
+            System.out.println("YOLO "+mDeck.toString());
+            cards.add(mDeck.getCard(this));
         }
 
-        createDecks();
+        //createDecks();
 
         mCardScrollView = new CardScrollView(this);
         CustomCardScrollAdapter adapter = new CustomCardScrollAdapter(cards);
@@ -43,20 +47,31 @@ public class MainActivity extends Activity {
         mCardScrollView.activate();
         setContentView(mCardScrollView);
 
-        Intent intentList = new Intent(this, ListActivity.class);
-        intentList.putExtra("Deck", mDecks);
-        startActivity(intentList);
+        mCardScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (mDecks.get(i).getType() == 1) {
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent, 0);
+                } else if (mDecks.get(i).getType() == 2) {
+
+                } else {
+                    DeckSingleton.getInstance(view.getContext()).addIndex(i);
+                    startActivity(new Intent(view.getContext(), ListActivity.class));
+                }
+            }
+        });
     }
 
-    private void createDecks() {
+    /*private void createDecks() {
         mDecks = new ArrayList<Deck>();
         Deck deck;
 
         createDecks();
 
-        deck = new Deck(this.getBaseContext(), "Test Deck, main text","footnote here","", (short) 0,true);
+        deck = new Deck("Test Deck, main text","footnote here","", (short) 0,true);
         mDecks.add(deck);
-    }
+    }*/
 
 
     @Override
