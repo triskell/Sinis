@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
         DeckParser unicorn = new DeckParser(getResources().getString(R.string.This_is_where_the_magic_happen));
 
         this.mDecks = unicorn.getMeck();
+        System.out.println("YOLO "+mDecks.toString());
         super.onCreate(savedInstanceState);
 
         ArrayList<Card> cards = new ArrayList<Card>();
