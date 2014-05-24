@@ -11,51 +11,59 @@ import com.google.android.glass.widget.CardScrollView;
 
 import net.trysk.sinis.sinis.adapter.CustomCardScrollAdapter;
 import net.trysk.sinis.sinis.card.Deck;
-import net.trysk.sinis.sinis.card.DeckParser;
-
-import java.util.ArrayList;
+import net.trysk.sinis.sinis.card.DeckPile;
 
 
 public class MainActivity extends Activity {
 
-    private ArrayList<Deck> mDecks;
     private CardScrollView mCardScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        DeckParser unicorn = new DeckParser(getResources().getString(R.string.This_is_where_the_magic_happen));
-
-        this.mDecks = unicorn.getMeck();
-        System.out.println("YOLO "+mDecks.toString());
         super.onCreate(savedInstanceState);
-
-        ArrayList<Card> cards = new ArrayList<Card>();
-        for (Deck mDeck : mDecks) {
-            cards.add(mDeck.getCard());
-        }
 
         createDecks();
 
         mCardScrollView = new CardScrollView(this);
-        CustomCardScrollAdapter adapter = new CustomCardScrollAdapter(cards);
+
+        int id = getIntent().getIntExtra("id", 0);
+        CustomCardScrollAdapter adapter = new CustomCardScrollAdapter(DeckPile.getInstance().getDeck(id).getCards());
         mCardScrollView.setAdapter(adapter);
         mCardScrollView.activate();
         setContentView(mCardScrollView);
 
-        Intent intentList = new Intent(this, ListActivity.class);
-        intentList.putExtra("Deck", mDecks);
-        startActivity(intentList);
+        Intent intentDeck = new Intent(this, MainActivity.class);
+
+
+
+        /*intentList.putExtra("Deck", mDecks);
+        startActivity(intentList);*/
     }
 
     private void createDecks() {
-        mDecks = new ArrayList<Deck>();
         Deck deck;
+        Card card;
 
-        createDecks();
+        deck = new Deck();
+            card = new Card(this);
+            card.setText("Test card 1-1");
+            deck.addCard(card);
 
-        deck = new Deck(this.getBaseContext(), "Test Deck, main text","footnote here","", (short) 0,true);
-        mDecks.add(deck);
+            card = new Card(this);
+            card.setText("Test card 1-2");
+            deck.addCard(card);
+        DeckPile.getInstance().adddeck(0, deck);
+
+        deck = new Deck();
+            card = new Card(this);
+            card.setText("Test card 2-1");
+            deck.addCard(card);
+
+            card = new Card(this);
+            card.setText("Test card 2-2");
+            deck.addCard(card);
+        DeckPile.getInstance().adddeck(1, deck);
+
     }
 
 
