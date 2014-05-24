@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Created by boris on 24/05/14.
  */
 public class DeckSingleton {
-    private static ArrayList<Integer> indexes;
+    public static ArrayList<Integer> indexes;
     private ArrayList<Deck> globalDeck;
     private static DeckSingleton deckUnicorn=null;
 

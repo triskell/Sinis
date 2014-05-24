@@ -59,7 +59,9 @@ public class ListActivity extends Activity {
                 }
                 else {
                     if(DeckSingleton.getInstance(view.getContext()).getCurrentDeck().get(i).getmDecks().size()>0) {
+                        System.out.println("YOLO1 " + DeckSingleton.indexes.toString());
                         DeckSingleton.getInstance(view.getContext()).addIndex(i);
+                        System.out.println("YOLO2 " + DeckSingleton.indexes.toString());
                         startActivity(new Intent(view.getContext(), ListActivity.class));
                     }
                     else{
@@ -70,8 +72,8 @@ public class ListActivity extends Activity {
         });
     }
     @Override
-    protected void onPause(){
-        super.onStop();
+    public void onBackPressed(){
+        super.onBackPressed();
         DeckSingleton.getInstance(this).removeIndex();
     }
 
