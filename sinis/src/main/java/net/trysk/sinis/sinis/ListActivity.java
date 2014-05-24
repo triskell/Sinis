@@ -64,7 +64,7 @@ public class ListActivity extends Activity {
         });
     }
     @Override
-    protected void onStop(){
+    protected void onPause(){
         super.onStop();
         DeckSingleton.getInstance(this).removeIndex();
     }
