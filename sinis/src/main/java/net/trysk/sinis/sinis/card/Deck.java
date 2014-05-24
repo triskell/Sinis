@@ -34,27 +34,16 @@ public class Deck{
     public Card getCard(Context mContext){
         Card card = new Card(mContext);
 
-        switch (this.mCardType){
-            case 1:
-                //TODO photo
-                break;
-            case 2:
-                //TODO video
-                break;
-            default:
-                if(this.mText.length()>0) card.setText(mText);
-                if(this.mFootnote.length()>0
-                        ) card.setFootnote(mFootnote);
+        if(this.mText.length()>0) card.setText(mText);
+        if(this.mFootnote.length()>0
+                ) card.setFootnote(mFootnote);
 
-                if(this.mImageR.length()>0){
-                    if(this.mIsFullScreen) card.setImageLayout(Card.ImageLayout.FULL);
-                    else card.setImageLayout(Card.ImageLayout.LEFT);
+        if(this.mImageR.length()>0) {
+            if (this.mIsFullScreen) card.setImageLayout(Card.ImageLayout.FULL);
+            else card.setImageLayout(Card.ImageLayout.LEFT);
 
-                    int identifier = mContext.getResources().getIdentifier(mImageR, "drawable","net.trysk.sinis.sinis");
-                    card.addImage(identifier);
-                }
-
-
+            int identifier = mContext.getResources().getIdentifier(mImageR, "drawable", "net.trysk.sinis.sinis");
+            card.addImage(identifier);
         }
         card.setText(mText);
         card.setFootnote(mFootnote);
@@ -62,7 +51,7 @@ public class Deck{
         return card;
     }
 
-    public ArrayList<Deck> getmDecks() {
+    public ArrayList<Deck> getmDecks(){
         return mDecks;
     }
 

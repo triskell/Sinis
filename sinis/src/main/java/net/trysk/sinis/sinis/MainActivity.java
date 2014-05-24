@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollView;
@@ -56,8 +57,13 @@ public class MainActivity extends Activity {
                 } else if (mDecks.get(i).getType() == 2) {
 
                 } else {
-                    DeckSingleton.getInstance(view.getContext()).addIndex(i);
-                    startActivity(new Intent(view.getContext(), ListActivity.class));
+                    if(DeckSingleton.getInstance(view.getContext()).getCurrentDeck().get(i).getmDecks().size()>0) {
+                        DeckSingleton.getInstance(view.getContext()).addIndex(i);
+                        startActivity(new Intent(view.getContext(), ListActivity.class));
+                    }
+                    else{
+                        Toast.makeText(view.getContext(), "Application test, chemin innaccessible", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

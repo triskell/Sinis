@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.google.android.glass.app.Card;
 import com.google.android.glass.media.CameraManager;
@@ -56,10 +57,15 @@ public class ListActivity extends Activity {
                     startActivityForResult(intent, 0);
                 } else if (mDecks.get(i).getType() == 2) {
                 }
-
-                    DeckSingleton.getInstance(view.getContext()).addIndex(i);
-                    startActivity(new Intent(view.getContext(), ListActivity.class));
-
+                else {
+                    if(DeckSingleton.getInstance(view.getContext()).getCurrentDeck().get(i).getmDecks().size()>0) {
+                        DeckSingleton.getInstance(view.getContext()).addIndex(i);
+                        startActivity(new Intent(view.getContext(), ListActivity.class));
+                    }
+                    else{
+                        Toast.makeText(view.getContext(), "Application test, chemin innaccessible", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
     }
